@@ -2,8 +2,44 @@
 <html>
 <head>
 	<title>TW2 Tools - FAST helper</title>
+	<script type="text/javascript">
+		function calc(form) {
+			return false;
+		}
+	</script>
 </head>
 <body>
-	<p>WIP</p>
+	<form onsubmit="return calc(this)">
+		<div style="float: left; margin-right: 20px">
+			<label for="haste1">Q1 Haste runes:</label>
+			<input type="number" id="haste1" min="0" step="1" value="0" size="4">
+			<br>
+			<label for="haste2">Q2 Haste runes:</label>
+			<input type="number" id="haste2" min="0" step="1" value="0" size="4">
+			<br>
+			<label for="haste3">Q3 Haste runes:</label>
+			<input type="number" id="haste3" min="0" step="1" value="0" size="4">
+			<br>
+			<label for="haste4">Q4 Haste runes:</label>
+			<input type="number" id="haste4" min="0" step="1" value="0" size="4">
+		</div>
+		<div>
+			<label for="faf1">Q1 Fight and Flight runes:</label>
+			<input type="number" id="faf1" min="0" step="1" value="0" size="4">
+			<br>
+			<label for="faf2">Q2 Fight and Flight runes:</label>
+			<input type="number" id="faf2" min="0" step="1" value="0" size="4">
+			<br>
+			<label for="faf3">Q3 Fight and Flight runes:</label>
+			<input type="number" id="faf3" min="0" step="1" value="0" size="4">
+			<br>
+			<label for="faf4">Q4 Fight and Flight runes:</label>
+			<input type="number" id="faf4" min="0" step="1" value="0" size="4">
+		</div>
+		<br>
+		<div>
+			<input type="submit" value="Calculate">
+		</div>
+	</form>
 </body>
 </html>
