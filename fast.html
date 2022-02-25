@@ -4,12 +4,29 @@
 	<title>TW2 Tools - FAST helper</title>
 	<script type="text/javascript">
 		function calc(form) {
+			var total = (
+				form.elements["haste1"].value*0.02 +
+				form.elements["haste2"].value*0.05 +
+				form.elements["haste3"].value*0.1 +
+				form.elements["haste4"].value*0.25 +
+				form.elements["faf1"].value*0.05 +
+				form.elements["faf2"].value*0.1 +
+				form.elements["faf3"].value*0.25
+				) * (1 + (form.elements["mirror"].value * 0.01)
+				) * (1.4 ** form.elements["acrobatics"].value
+				) * (1.4 ** form.elements["fleet"].value);
+
+			if (form.elements["deer"].checked) {
+				total *= 2;
+			}
+
+			document.getElementById("results").innerHTML = Math.floor(total*100)+"%";
 			return false;
 		}
 	</script>
 </head>
 <body>
-	<form onsubmit="return calc(this)">
+	<form onsubmit="return calc(this);">
 		<div style="float: left; margin-right: 20px">
 			<label for="haste1">Q1 Haste runes:</label>
 			<input type="number" id="haste1" min="0" step="1" value="0" size="4">
@@ -50,9 +67,8 @@
 			<input type="checkbox" id="deer">
 		</div>
 		<br>
-		<div>
-			<input type="submit" value="Calculate">
-		</div>
+		<input type="submit" value="Calculate">
+		<span id="results"></span>
 	</form>
 </body>
 </html>
